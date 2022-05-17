@@ -3,3 +3,11 @@
     width: 100%;
     border-bottom: 1px black solid;
 }
+
+.container-logo{
+    width: 150px;
+}
+
+.container-logo img{
+    width: 100%;
+}
