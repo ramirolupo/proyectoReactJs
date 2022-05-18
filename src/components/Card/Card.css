@@ -1,0 +1,19 @@
+.card-item {
+
+    display: flex;flex-direction: column;
+}
+
+.card-item img{
+
+    width: 100%;
+}
+
+.card-item p {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-item span {
+    font-size: 15px;margin-bottom: 12px;
+}
