@@ -3,6 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const theme = createTheme({
     palette: {
@@ -20,27 +21,28 @@ const NavBar = () => {
     return(
         <>
             <ThemeProvider theme={theme}>
-                <AppBar position="static">
+                <AppBar position="static" className='header-primary'>
                     <Toolbar>
                         <div className='container-logo'>
-                            {// eslint-disable-next-line jsx-a11y/alt-text
-                            }<img src='./logo.jpg' /> 
+                            <img src='./logo.jpg' alt='logo' /> 
                         </div>
-                        <ul>
-                            <li>
-                                <button>Paletas</button>
-                            </li>
-                            <li>
-                                <button>Accesorios</button>
-                            </li>
-                            <li>
-                                <button>Indumentaria</button>
-                            </li>
-                            <li>
-                                <button>Bolsos</button>
-                            </li>
-                        </ul>
-                        <Button color="inherit">Iniciar Sesión</Button>
+                        <ul className='navbar'>
+                    <li>
+                        <Button disableRipple style={{ backgroundColor: 'transparent' }} variant='text' className='navbar__btn'>Inicio</Button>
+                    </li>
+                    <li>
+                        <Button disableRipple style={{ backgroundColor: 'transparent' }} variant='text' className='navbar__btn'>Productos</Button>
+                    </li>
+                    <li>
+                        <Button disableRipple style={{ backgroundColor: 'transparent' }} variant='text' className='navbar__btn'>Preguntas Frecuentes</Button>
+                    </li>
+                    <li>
+                        <Button disableRipple style={{ backgroundColor: 'transparent' }} variant='text' className='navbar__btn'>Contacto</Button>
+                    </li>
+                </ul>
+                <Button color="inherit">
+                    <ShoppingCartIcon /> 
+                </Button>
                     </Toolbar>
                 </AppBar>
             </ThemeProvider>

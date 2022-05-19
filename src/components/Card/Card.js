@@ -15,19 +15,18 @@ const theme = createTheme({
     },
 });
 
-const CardItem = (props) => {
+const CardItem = ({ image, title, price }) => {
     return(
         <ThemeProvider theme={theme}>
             <Card sx={{ minWidth: 275 }}>
                 <CardContent>
                 <div className="card-item">
                     <div>
-                        {// eslint-disable-next-line jsx-a11y/alt-text
-                        }<img src="F-Bullpadel Hack 03.jpg"/>
+                        <img src={`./${image}`} alt='cardImg'/>
                     </div>
-                    <p>Titulo</p>
-                    <span>Precio</span>
-                    <Button variant={'contained'} >Holiis</Button>
+                    <p>{title}</p>
+                    <span>$ {price}</span>
+                    <Button variant={'contained'} >Ver Más</Button>
                 </div>
                 </CardContent>
             </Card>
