@@ -19,3 +19,7 @@
 .card-item span {
     font-size: 15px;margin-bottom: 12px;
 }
+
+.card-item-button{
+    margin-top: 10px !important;
+}
