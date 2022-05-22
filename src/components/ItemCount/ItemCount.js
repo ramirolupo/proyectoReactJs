@@ -2,7 +2,7 @@ import './ItemCount.css'
 import { useState } from 'react'
 import { Button }  from '@mui/material';
 
-const ItemCount = ( {stock = 5 } ) => {
+const ItemCount = ( { stock = 5 } ) => {
     const [count, setCount] = useState(1)
     
     const addCount = () => {
