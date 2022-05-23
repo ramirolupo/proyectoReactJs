@@ -7,7 +7,10 @@
 .card-item img{
 
     width: 100%;
+}
+.card-item img{
 
+    width: 100%;
 }
 
 .card-item p {
@@ -22,4 +25,34 @@
 
 .card-item-button{
     margin-top: 10px !important;
+}
+
+.card-item .card-btn-details {
+    position: absolute;
+    width: 100%;
+    background: none;
+    border: none;
+    left: 0;
+    box-shadow: none;
+    bottom: -30px;
+    background: #ffffffa1;
+    color: black;
+    z-index: 0;
+    border-radius: 0px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.card-item .card-item__img-box:hover .card-btn-details {
+    bottom: 0px;
+    opacity: 1;
+}
+
+.card-item .card-btn-details:hover {
+    background: white;
+    box-shadow: none;
+}
+
+.card-item__img-box {
+    position: relative;
 }

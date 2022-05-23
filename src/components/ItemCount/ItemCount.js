@@ -25,7 +25,6 @@ const ItemCount = ( { stock = 5 } ) => {
                 <p>{count}</p>
                 <Button onClick={addCount}>+</Button>
             </div>
-            <Button variant={'contained'} >Ver Más</Button>
             <Button onClick={addToCart} variant={'contained'} className="card-item-button" >Comprar</Button>
             
         </>

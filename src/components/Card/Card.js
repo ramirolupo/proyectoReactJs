@@ -3,6 +3,7 @@ import ItemCount from '../ItemCount/ItemCount';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Button } from '@mui/material'
 
 const theme = createTheme({
     palette: {
@@ -21,8 +22,9 @@ const CardItem = ({ image, title, price }) => {
             <Card sx={{ minWidth: 275 }}>
                 <CardContent>
                 <div className="card-item">
-                    <div>
+                    <div className='card-item__img-box'>
                         <img src={`./${image}`} alt='cardImg'/>
+                        <Button variant={'contained'} className="card-btn-details">Ver Más</Button>
                     </div>
                     <p>{title}</p>
                     <span>$ {price}</span>
