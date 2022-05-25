@@ -71,11 +71,11 @@ const CardList = () =>{
                 <Grid container spacing={2}>
                     {
                         products.map( (producto) => {
-                            const { title, price, image, id, stock } = producto
+                            const { title, price, image, image2, id, stock } = producto
                             return(
                                 <>
                                     <Grid item md={3} key={id} >
-                                        <CardItem title={title} price={price} image={image} stock={stock}/>
+                                        <CardItem title={title} price={price} image={image} image2={image2} stock={stock}/>
                                     </Grid>
                                 </>
                             )
