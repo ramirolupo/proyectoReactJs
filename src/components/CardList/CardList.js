@@ -40,7 +40,7 @@ const CardList = () =>{
             description: '',
             stock: 4,
             id: 4
-        }
+        },
     ]
 
     const getProducts = () =>{

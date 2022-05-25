@@ -2,7 +2,7 @@ import './ItemCount.css'
 import { useState } from 'react'
 import { Button }  from '@mui/material';
 
-const ItemCount = ( { stock } ) => {
+const ItemCount = ( { stock, title } ) => {
     const [count, setCount] = useState(1)
     
     const addCount = () => {
@@ -16,7 +16,7 @@ const ItemCount = ( { stock } ) => {
         }
     }
     const addToCart = () =>{
-        console.log('Compraste',count,'paletas');
+        console.log('Compraste',count, title);
     }
     return(
         <>

@@ -27,7 +27,7 @@ const CardItem = ({ image, image2, title, price, stock }) => {
                             </div>
                         <p>{title}</p>
                         <span>$ {price}</span>
-                        <ItemCount stock={stock} /> 
+                        <ItemCount stock={stock} title={title} /> 
                     </div>
                 </CardContent>
             </Card>
