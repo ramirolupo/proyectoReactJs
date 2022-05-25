@@ -16,20 +16,20 @@ const theme = createTheme({
     },
 });
 
-const CardItem = ({ image, title, price }) => {
+const CardItem = ({ image, title, price, stock }) => {
     return(
         <ThemeProvider theme={theme}>
             <Card sx={{ minWidth: 275 }}>
                 <CardContent>
-                <div className="card-item">
-                    <div className='card-item__img-box'>
-                        <img src={`./${image}`} alt='cardImg'/>
-                        <Button variant={'contained'} className="card-btn-details">Ver Más</Button>
+                    <div className="card-item">
+                        <div className='card-item__img-box'>
+                            <img src={`./${image}`} alt='cardImg'/>
+                            <Button variant={'contained'} className="card-btn-details">Ver Más</Button>
+                        </div>
+                        <p>{title}</p>
+                        <span>$ {price}</span>
+                        <ItemCount stock={stock} /> 
                     </div>
-                    <p>{title}</p>
-                    <span>$ {price}</span>
-                    <ItemCount/> 
-                </div>
                 </CardContent>
             </Card>
         </ThemeProvider>
