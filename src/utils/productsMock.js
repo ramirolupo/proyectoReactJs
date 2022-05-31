@@ -42,6 +42,7 @@ const producto = {
     price: 85000,
     image: 'F-NOX AT10 Genius.jpg',
     image2: 'C-NOX AT10 Genius.jpg',
+    image3: 'D-NOX AT10 Genius.jpg',
     description: '',
     stock: 4,
     id: 4
