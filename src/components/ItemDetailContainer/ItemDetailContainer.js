@@ -18,9 +18,11 @@ const ItemDetailContainer = () =>{
             setProduct(productFilter)     
         }
             
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const productFilter = productos.find( (product) =>{
+        // eslint-disable-next-line eqeqeq
         return product.id == id
 
     })
