@@ -19,7 +19,7 @@ const ItemDetailContainer = () =>{
         }
             
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, [id])
 
     const productFilter = productos.find( (product) =>{
         // eslint-disable-next-line eqeqeq
