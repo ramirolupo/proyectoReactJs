@@ -1,18 +1,22 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar'
-// import CardList from './components/CardList/CardList'
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './Pages/Home';
+import Detalle from './Pages/Detalle';
+import NotFound from './Pages/NotFoud';
 
 
 function App() {
   return (
     <div className="App">
-      <NavBar/>
-      {/* <div className='general-container'>
-        <CardList/>
-      </div> */}
-      <ItemDetailContainer/>
-
+      <BrowserRouter>
+        <NavBar/>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/product/:id' element={<Detalle />} />
+          <Route path='/notFound' element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

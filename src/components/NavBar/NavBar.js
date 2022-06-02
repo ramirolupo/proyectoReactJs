@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PrimarySearchAppBar from '../NavBar/Search'
+import { Link } from 'react-router-dom';
 
 const theme = createTheme({
     palette: {
@@ -29,7 +30,9 @@ const NavBar = () => {
                         </div>
                         <ul className='navbar'>
                             <li>
-                                <Button disableRipple style={{ backgroundColor: 'transparent' }} variant='text' className='navbar__btn'>Inicio</Button>
+                                <Link to={'/'}> 
+                                    <Button disableRipple style={{ backgroundColor: 'transparent' }} variant='text' className='navbar__btn'>Inicio</Button>
+                                </Link>
                             </li>
                             <li>
                                 <Button disableRipple style={{ backgroundColor: 'transparent' }} variant='text' className='navbar__btn'>Productos</Button>

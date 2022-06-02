@@ -24,7 +24,6 @@ const CardList = () =>{
         })
         .finally( () => {
         })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     
@@ -35,11 +34,18 @@ const CardList = () =>{
                 <Grid container spacing={2}>
                     {
                         products.map( (producto) => {
-                            const { title, price, image, image2, id, stock } = producto
+                            const { title, price, image, image2, image3, id, stock } = producto
                             return(
                                 <>
                                     <Grid item md={3} key={id} >
-                                        <CardItem title={title} price={price} image={image} image2={image2} stock={stock}/>
+                                        <CardItem 
+                                            title={title} 
+                                            price={price} 
+                                            image={image} 
+                                            image2={image2} 
+                                            image3={image3} 
+                                            stock={stock} 
+                                            id={id} />
                                     </Grid>
                                 </>
                             )
