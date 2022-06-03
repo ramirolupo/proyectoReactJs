@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
 import Detalle from './Pages/Detalle';
 import NotFound from './Pages/NotFoud';
+import ProductList from './Pages/ProductList';
+
 
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
         <NavBar/>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/products/:category' element={<ProductList />} />
           <Route path='/product/:id' element={<Detalle />} />
           <Route path='/notFound' element={<NotFound />} />
         </Routes>

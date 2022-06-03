@@ -35,7 +35,9 @@ const NavBar = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Button disableRipple style={{ backgroundColor: 'transparent' }} variant='text' className='navbar__btn'>Productos</Button>
+                                <Link to={'/products/:category'}>
+                                    <Button disableRipple style={{ backgroundColor: 'transparent' }} variant='text' className='navbar__btn'>Productos</Button>
+                                </Link>
                             </li>
                             <li>
                                 <Button disableRipple style={{ backgroundColor: 'transparent' }} variant='text' className='navbar__btn'>Preguntas Frecuentes</Button>
