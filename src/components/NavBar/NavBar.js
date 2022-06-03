@@ -6,6 +6,10 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PrimarySearchAppBar from '../NavBar/Search'
 import { Link } from 'react-router-dom';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import { useState } from 'react';
+
 
 const theme = createTheme({
     palette: {
@@ -20,6 +24,15 @@ const theme = createTheme({
 
 
 const NavBar = () => {
+    const [anchorEl, setAnchorEl] = useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
+
     return(
         <>
             <ThemeProvider theme={theme}>
@@ -35,9 +48,35 @@ const NavBar = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link to={'/products/:category'}>
-                                    <Button disableRipple style={{ backgroundColor: 'transparent' }} variant='text' className='navbar__btn'>Productos</Button>
-                                </Link>
+                            <Button
+                            id="basic-button"
+                            aria-controls={open ? 'basic-menu' : undefined}
+                            aria-haspopup="true"
+                            aria-expanded={open ? 'true' : undefined}
+                            onClick={handleClick}
+                            disableRipple
+                            style={{ backgroundColor: 'transparent' }} 
+                            variant='text' 
+                            className='navbar__btn'
+                        >
+                            Productos
+                        </Button>
+                        <Menu
+                            id="basic-menu"
+                            anchorEl={anchorEl}
+                            open={open}
+                            onClose={handleClose}
+                            MenuListProps={{
+                            'aria-labelledby': 'basic-button',
+                            }}
+                        >
+                        <Link to={'/products/paletas'}>
+                            <MenuItem onClick={handleClose}>Paletas</MenuItem>
+                        </Link>
+                        <Link to={'/products/accesorios'}>
+                            <MenuItem onClick={handleClose}>Accesorios</MenuItem>
+                        </Link>
+                        </Menu>
                             </li>
                             <li>
                                 <Button disableRipple style={{ backgroundColor: 'transparent' }} variant='text' className='navbar__btn'>Preguntas Frecuentes</Button>

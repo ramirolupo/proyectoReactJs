@@ -10,19 +10,20 @@ const ProductList = () => {
 
     const getProducts = () =>{
         return new Promise( (resolve, reject) => {
-            setTimeout( () => {
+            //setTimeout( () => {
                 resolve(productos)
-            }, 2000)
+            //}, 2000)
         })
     }
 
     useEffect( () => {
+        setProducts([])
         getProducts()
         .then( (res) => {
             //setProducts(res)
             filterByCategory(res)
         })
-    }, [])
+    }, [category])
 
     const filterByCategory = (array) => {
         return array.map( (item) => {
