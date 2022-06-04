@@ -12,6 +12,7 @@ const ProductList = () => {
         return new Promise( (resolve, reject) => {
             //setTimeout( () => {
                 resolve(productos)
+                console.log('productos: ', productos)
             //}, 2000)
         })
     }
@@ -22,12 +23,13 @@ const ProductList = () => {
         .then( (res) => {
             //setProducts(res)
             filterByCategory(res)
+            console.log('array productos: ',res)
         })
     }, [category])
 
     const filterByCategory = (array) => {
         return array.map( (item) => {
-            if(item.category == category) {
+            if(item.category === category) {
                 return setProducts(products => [...products, item])
             }
         })

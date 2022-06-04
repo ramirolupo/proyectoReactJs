@@ -5,7 +5,7 @@ import { Grid, Container } from '@mui/material'
 const CardList = ({title, products}) =>{
 
     return(
-        <>
+        <div>
             <h2>{title}</h2>
             <Container>
                 <Grid container spacing={2}>
@@ -13,8 +13,7 @@ const CardList = ({title, products}) =>{
                         products.map( ({title, price, image, image2, image3, id, stock}) => {
                         
                             return(
-                                <>
-                                    <Grid item md={3} key={id} >
+                                <Grid item md={3} key={id} >
                                         <CardItem 
                                             title={title} 
                                             price={price} 
@@ -22,15 +21,15 @@ const CardList = ({title, products}) =>{
                                             image2={image2} 
                                             image3={image3} 
                                             stock={stock} 
-                                            id={id} />
-                                    </Grid>
-                                </>
+                                            id={id}
+                                        />
+                                </Grid>
                             )
                         })
                     }
                 </Grid>
             </Container>
-        </>
+        </div>
     )
 }
 
