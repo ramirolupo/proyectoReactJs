@@ -23,9 +23,9 @@ const CardItem = ({ image, image2, title, price, stock, id }) => {
                 <CardContent>
                     <div className="card-item">
                             <div className='images'>
-                                <img src={`./${image}`} alt='cardImgFront'/>
+                                <img src={`/${image}`} alt='cardImgFront'/>
                                 <Link to={`/product/${id}`}>
-                                    <img src={`./${image2}`} alt='cardImgSide' className='img-top'/>
+                                    <img src={`/${image2}`} alt='cardImgSide' className='img-top'/>
                                 </Link>
                                 
                             </div>

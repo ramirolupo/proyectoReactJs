@@ -39,7 +39,7 @@ const NavBar = () => {
                 <AppBar position="static" className='header-primary'>
                     <Toolbar>
                         <div className='container-logo'>
-                            <img src='./logo.jpg' alt='logo' /> 
+                            <img src='/logo.jpg' alt='logo' /> 
                         </div>
                         <ul className='navbar'>
                             <li>
@@ -70,7 +70,7 @@ const NavBar = () => {
                             'aria-labelledby': 'basic-button',
                             }}
                         >
-                        <Link to={'/categorias'}>
+                        <Link to={'/products/paletas'}>
                             <MenuItem onClick={handleClose}>Paletas</MenuItem>
                         </Link>
                         <Link to={'/products/accesorios'}>

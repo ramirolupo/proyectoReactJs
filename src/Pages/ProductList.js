@@ -1,38 +1,35 @@
 import CardList from "../components/CardList/CardList"
 import { useState, useEffect } from 'react'
 import productos from '../utils/productsMock'
-// import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
 
 const ProductList = () => {
     const [products, setProducts] = useState([])
-    //const { category } = useParams()
+    const { category } = useParams()
 
-    const getProducts = () =>{
+    const getProducts = () => {
         return new Promise( (resolve, reject) => {
-            //setTimeout( () => {
+            // setTimeout( () => {
                 resolve(productos)
-            //}, 2000)
+            // }, 2000)
         })
     }
 
     useEffect( () => {
-        //setProducts([])
         getProducts()
         .then( (res) => {
-            setProducts(res)
-            //filterByCategory(res)
+            // setProducts(res)
+            filterByCategory(res)
+            console.log(res)
         })
-    }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [category])
 
-    // const filterByCategory = (array) => {
-    //     return array.map( (item) => {
-    //         if(item.category === category) {
-    //             return setProducts(products => [...products, item])
-    //         }
-    //     })
-        
-    // }
+    const filterByCategory = (array) => {
+        const paletas = array.filter((el) => el.category === category);
+        setProducts(paletas)
+    }
 
     return(
         <div>

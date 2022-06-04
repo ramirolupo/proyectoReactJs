@@ -9,23 +9,22 @@ const ItemDetailContainer = () =>{
     const navigate = useNavigate()
     const [product, setProduct] = useState({})
 
+    
+    const productFilter = productos.find( (product) =>{
+        return product.id === Number(id)
 
+    })
     useEffect(() =>{
 
-        if(productFilter === undefined){
+        if(!productFilter){
             navigate('/notFound')            
         } else{
             setProduct(productFilter)     
         }
             
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [id])
+    }, [productFilter, id])
 
-    const productFilter = productos.find( (product) =>{
-        // eslint-disable-next-line eqeqeq
-        return product.id == id
-
-    })
 
     return(
 

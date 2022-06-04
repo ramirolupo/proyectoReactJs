@@ -13,7 +13,7 @@ const CardList = ({title, products}) =>{
                         products.map( ({title, price, image, image2, image3, id, stock}) => {
                         
                             return(
-                                <Grid item md={3} key={id} >
+                                <Grid item md={3} key={`cardList-${id}`} >
                                         <CardItem 
                                             title={title} 
                                             price={price} 
