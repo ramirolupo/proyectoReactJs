@@ -14,10 +14,10 @@ function App() {
       <BrowserRouter>
         <NavBar/>
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/products/:category' element={<ProductList />} />
-          <Route path='/product/:id' element={<Detalle />} />
-          <Route path='/notFound' element={<NotFound />} />
+          <Route exact path='/' element={<Home />} />
+          <Route exact path='/products/:category' element={<ProductList />} />
+          <Route exact path='/product/:id' element={<Detalle />} />
+          <Route exact path='/notFound' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
