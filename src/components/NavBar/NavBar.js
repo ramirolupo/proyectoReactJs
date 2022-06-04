@@ -43,7 +43,7 @@ const NavBar = () => {
                         </div>
                         <ul className='navbar'>
                             <li>
-                                <Link to={'/'}> 
+                                <Link to={'/'} style={{ textDecoration: 'none', color: 'black' }}> 
                                     <Button disableRipple style={{ backgroundColor: 'transparent' }} variant='text' className='navbar__btn'>Inicio</Button>
                                 </Link>
                             </li>
@@ -70,10 +70,10 @@ const NavBar = () => {
                             'aria-labelledby': 'basic-button',
                             }}
                         >
-                        <Link to={'/products/paletas'}>
+                        <Link to={'/products/paletas'} style={{ textDecoration: 'none', color: 'black' }}>
                             <MenuItem onClick={handleClose}>Paletas</MenuItem>
                         </Link>
-                        <Link to={'/products/accesorios'}>
+                        <Link to={'/products/accesorios'} style={{ textDecoration: 'none', color: 'black' }}>
                             <MenuItem onClick={handleClose}>Accesorios</MenuItem>
                         </Link>
                         </Menu>
