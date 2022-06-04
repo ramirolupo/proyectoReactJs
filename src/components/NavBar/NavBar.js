@@ -70,7 +70,7 @@ const NavBar = () => {
                             'aria-labelledby': 'basic-button',
                             }}
                         >
-                        <Link to={'/products/paletas'}>
+                        <Link to={'/categorias'}>
                             <MenuItem onClick={handleClose}>Paletas</MenuItem>
                         </Link>
                         <Link to={'/products/accesorios'}>
