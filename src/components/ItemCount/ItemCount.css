@@ -6,3 +6,20 @@
     border-bottom: 1px solid #ccc;
     margin-bottom: 10px;
 }
+
+.count{
+    margin-top: 10px;
+}
+
+.count-title{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-weight: bolder;
+}
+
+.card-item-button{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}

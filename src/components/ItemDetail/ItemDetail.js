@@ -1,8 +1,15 @@
 import './ItemDetail.css'
+import { useState } from 'react'
+import ItemCount from '../ItemCount/ItemCount';
+import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 
 const ItemDetail = ( {data} ) =>{
-    const { image3, title, price } = data;
+    const [cantidad, setCantidad] = useState(1)
+    const { image3, title, price, stock } = data;
+    const [showButton, setShowButton] = useState(false)
+
     return(
         <>
             <div className='detail-product-container'>
@@ -13,7 +20,7 @@ const ItemDetail = ( {data} ) =>{
                     <div className='detail-product-info__title'>
                         <h2>{title}</h2>
                     </div>
-                    <p>$ {data.price}</p>
+                    <p>$ {price}</p>
                     <p className='price'>8 Cuotas sin interés de $ {price / 10}</p>
                     <p>Una pala increíble ahora con <span>Fibra de Carbono 18K</span></p>
                     <p>Incluye el nuevo sistema de cordón de seguridad.</p>
@@ -29,6 +36,17 @@ const ItemDetail = ( {data} ) =>{
                         <li><span>Cara:</span> Fiber Carbon 18K</li>
                         <li><span>Smartstrap</span></li>
                     </ul>
+                    {!showButton ?
+                        <ItemCount 
+                                stock={stock}
+                                cantidad={cantidad}
+                                setCantidad={setCantidad}
+                                setShowButton={setShowButton} />
+                        :
+                        <Link to={'/cart'} style={{ textDecoration: 'none', color: 'white' }}>
+                        <Button variant={'contained'} style={{backgroundColor:'#14323d'}}> Terminar mi compra </Button>
+                        </Link>
+                    }
                 </div>  
             </div>  
         </> 

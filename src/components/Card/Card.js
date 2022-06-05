@@ -1,5 +1,4 @@
 import './Card.css'
-import ItemCount from '../ItemCount/ItemCount';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -16,7 +15,7 @@ const theme = createTheme({
     },
 });
 
-const CardItem = ({ image, image2, title, price, stock, id }) => {
+const CardItem = ({ image, image2, title, price, id }) => {
     return(
         <ThemeProvider theme={theme}>
             <Card sx={{ minWidth: 275 }}>
@@ -31,7 +30,6 @@ const CardItem = ({ image, image2, title, price, stock, id }) => {
                             </div>
                         <p>{title}</p>
                         <span>$ {price}</span>
-                        <ItemCount stock={stock} title={title} />
                     </div>
                 </CardContent>
             </Card>
