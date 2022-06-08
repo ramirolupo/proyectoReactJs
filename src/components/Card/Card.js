@@ -16,6 +16,8 @@ const theme = createTheme({
 });
 
 const CardItem = ({ image, image2, title, price, id }) => {
+    
+
     return(
         <ThemeProvider theme={theme}>
             <Card sx={{ minWidth: 275 }}>
