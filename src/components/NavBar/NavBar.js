@@ -3,12 +3,12 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PrimarySearchAppBar from '../NavBar/Search'
 import { Link } from 'react-router-dom';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { useState } from 'react';
+import CartWidget from '../CartWidget/CartWidget';
 
 
 const theme = createTheme({
@@ -86,9 +86,7 @@ const NavBar = () => {
                             </li>
                         </ul>
                         <PrimarySearchAppBar className='search'/>
-                        <Button color="inherit">
-                            <ShoppingCartIcon /> 
-                        </Button>
+                        <CartWidget/>
                     </Toolbar>
                 </AppBar>
             </ThemeProvider>

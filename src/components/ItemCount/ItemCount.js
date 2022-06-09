@@ -13,11 +13,22 @@ const ItemCount = ( { stock, cantidad, setCantidad, setShowButton } ) => {
         <div className='count'>
             <p className='count-title'>Selecciona cantidad</p>
             <div className='count-item'>
-                <Button  onClick={removeProduct} disabled={cantidad === 1} >-</Button>
+                <Button  
+                    onClick={removeProduct} 
+                    disabled={cantidad === 1} 
+                >-</Button>
                 <p>{cantidad}</p>
-                <Button onClick={addProduct} disabled={cantidad === stock} >+</Button>
+                <Button 
+                    onClick={addProduct} 
+                    disabled={cantidad === stock} 
+                >+</Button>
             </div>
-            <Button onClick={() => setShowButton(true)} variant={'contained'} className='card-item-button' style={{backgroundColor:'#14323d'}}>AGREGAR PRODUCTO</Button>
+            <Button 
+                onClick={() => setShowButton(true)} 
+                variant={'contained'} 
+                className='card-item-button' 
+                style={{backgroundColor:'#14323d'}}
+            >AGREGAR PRODUCTO</Button>
         </div>
     )
 }

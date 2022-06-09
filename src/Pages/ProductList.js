@@ -21,7 +21,6 @@ const ProductList = () => {
         .then( (res) => {
             // setProducts(res)
             filterByCategory(res)
-            console.log(res)
         })
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [category])

@@ -3,12 +3,15 @@ import { useState } from 'react'
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
+import CartContext from '../../context/CartContext'
+import { useContext } from 'react';
 
 
 const ItemDetail = ( {data} ) =>{
     const [cantidad, setCantidad] = useState(1)
-    const { image3, title, price, stock } = data;
+    const { image, image2, image3, title, price, stock, id } = data;
     const [showButton, setShowButton] = useState(false)
+    const { addProductToCart } = useContext(CartContext)
 
     return(
         <>
@@ -43,9 +46,13 @@ const ItemDetail = ( {data} ) =>{
                                 setCantidad={setCantidad}
                                 setShowButton={setShowButton} />
                         :
-                        <Link to={'/cart'} style={{ textDecoration: 'none', color: 'white' }}>
-                        <Button variant={'contained'} style={{backgroundColor:'#14323d'}}> Terminar mi compra </Button>
-                        </Link>
+                        // <Link to={'/cart'} style={{ textDecoration: 'none', color: 'white' }}>
+                        <Button 
+                            variant={'contained'}
+                            style={{backgroundColor:'#14323d'}}
+                            onClick={() => addProductToCart({ image, image2, title, price, id, cantidad })}
+                            > Terminar mi compra </Button>
+                        //</Link>
                     }
                 </div>  
             </div>  
