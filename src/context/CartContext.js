@@ -11,14 +11,26 @@ const CartProvider = ({children}) => {
         let isInCart = cartListItems.find(cartItem => cartItem.id === product.id)
         if(!isInCart) {
             setTotalPrice(totalPrice + product.price)
-            console.log('producto', product)
             return setCartListItems(cartListItems => [...cartListItems, product])
         }
         console.log("El producto ya se encuentra en el carrito")
     }
+
+    const removeProductFromCart = (id) => {
+        const auxCart = cartListItems.filter(product => product.id !== id)
+        setCartListItems(auxCart)
+        
+    }
+
+    const clearCart = () => setCartListItems([])
+
+
+
     const data = {
         cartListItems,
-        addProductToCart
+        addProductToCart,
+        removeProductFromCart,
+        clearCart
     }
 
 
