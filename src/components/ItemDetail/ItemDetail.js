@@ -12,6 +12,11 @@ const ItemDetail = ( {data} ) =>{
     const { image, image2, image3, title, price, stock, id } = data;
     const [showButton, setShowButton] = useState(false)
     const { addProductToCart } = useContext(CartContext)
+    const handleClick = () => {
+        setShowButton(true);
+        addProductToCart({ image, image2, title, price, id, cantidad })
+
+    }
 
     return(
         <>
@@ -40,19 +45,35 @@ const ItemDetail = ( {data} ) =>{
                         <li><span>Smartstrap</span></li>
                     </ul>
                     {!showButton ?
-                        <ItemCount 
-                                stock={stock}
-                                cantidad={cantidad}
-                                setCantidad={setCantidad}
-                                setShowButton={setShowButton} />
+                        <>
+                            <ItemCount 
+                                    stock={stock}
+                                    cantidad={cantidad}
+                                    setCantidad={setCantidad}
+                                    setShowButton={setShowButton} />
+                            <Button 
+                                onClick={handleClick} 
+                                variant={'contained'} 
+                                className='card-item-button' 
+                                style={{backgroundColor:'#14323d'}}
+                            >AGREGAR PRODUCTO</Button>
+                        </>
                         :
-                        // <Link to={'/cart'} style={{ textDecoration: 'none', color: 'white' }}>
-                        <Button 
-                            variant={'contained'}
-                            style={{backgroundColor:'#14323d'}}
-                            onClick={() => addProductToCart({ image, image2, title, price, id, cantidad })}
-                            > Terminar mi compra </Button>
-                        //</Link>
+                        <>
+                            <Link to='/cart' style={{ textDecoration: 'none', color: 'white' }}>
+                            <Button 
+                                variant={'contained'}
+                                style={{backgroundColor:'#14323d'}}
+                                > Terminar mi compra </Button>
+                            </Link>
+                            <Link to='/products/paletas' style={{ textDecoration: 'none', color: 'white', marginTop: '10px' }}>
+                            <Button 
+                                variant={'contained'}
+                                style={{backgroundColor:'#14323d'}}
+                                > Volver </Button>
+                            </Link>
+                        </>
+                        
                     }
                 </div>  
             </div>  

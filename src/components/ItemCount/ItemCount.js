@@ -1,7 +1,9 @@
 import './ItemCount.css'
 import { Button }  from '@mui/material';
 
-const ItemCount = ( { stock, cantidad, setCantidad, setShowButton } ) => {
+
+const ItemCount = ( { stock, cantidad, setCantidad } ) => {
+
     const addProduct = () => {
         setCantidad(cantidad + 1)
     }
@@ -9,12 +11,13 @@ const ItemCount = ( { stock, cantidad, setCantidad, setShowButton } ) => {
         setCantidad(cantidad - 1)
     }
 
+
     return(
         <div className='count'>
             <p className='count-title'>Selecciona cantidad</p>
             <div className='count-item'>
                 <Button  
-                    onClick={removeProduct} 
+                    onClick={removeProduct}
                     disabled={cantidad === 1} 
                 >-</Button>
                 <p>{cantidad}</p>
@@ -23,12 +26,6 @@ const ItemCount = ( { stock, cantidad, setCantidad, setShowButton } ) => {
                     disabled={cantidad === stock} 
                 >+</Button>
             </div>
-            <Button 
-                onClick={() => setShowButton(true)} 
-                variant={'contained'} 
-                className='card-item-button' 
-                style={{backgroundColor:'#14323d'}}
-            >AGREGAR PRODUCTO</Button>
         </div>
     )
 }
