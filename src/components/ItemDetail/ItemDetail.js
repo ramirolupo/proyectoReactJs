@@ -13,9 +13,10 @@ const ItemDetail = ( {data} ) =>{
     const [showButton, setShowButton] = useState(false)
     const { addProductToCart } = useContext(CartContext)
     const handleClick = () => {
-        setShowButton(true);
+        return(
+        setShowButton(true),
         addProductToCart({ image, image2, title, price, id, cantidad })
-
+        )
     }
 
     return(
