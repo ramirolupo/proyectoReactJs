@@ -10,15 +10,30 @@ const CartProvider = ({children}) => {
     const addProductToCart = (product) => {
         let isInCart = cartListItems.find(cartItem => cartItem.id === product.id)
         if(!isInCart) {
-            setTotalPrice(totalPrice + product.price)
-            console.log('producto', product)
+            setTotalPrice(totalPrice + (product.price * product.cantidad))
+            console.log('precio total: ', totalPrice)
+            console.log('precio individual', product.price)
             return setCartListItems(cartListItems => [...cartListItems, product])
         }
         console.log("El producto ya se encuentra en el carrito")
     }
+
+    const removeProductFromCart = (id) => {
+        const auxCart = cartListItems.filter(product => product.id !== id)
+        setCartListItems(auxCart)
+        
+    }
+
+    const clearCart = () => setCartListItems([])
+
+
+
     const data = {
         cartListItems,
-        addProductToCart
+        addProductToCart,
+        totalPrice,
+        removeProductFromCart,
+        clearCart
     }
 
 

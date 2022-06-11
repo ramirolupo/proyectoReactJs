@@ -4,9 +4,10 @@ import Menu from '@mui/material/Menu';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CartContext from '../../context/CartContext'
 import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 const CartWidget = () =>  {
-    const { cartListItems } = useContext(CartContext)
+    const { cartListItems, removeProductFromCart, clearCart } = useContext(CartContext)
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -43,25 +44,33 @@ const CartWidget = () =>  {
                     )}
                     {cartListItems.map( (item) => {
                         return(
-                        <div className='item-cart-prod' key={item.id}>
-                            <div className='cart-prod__image'>
-                                <img src={`/${item.image}`} alt="prod carrito" />
+                            <div className='item-cart-prod' key={item.id}>
+                                <div className='cart-prod__image'>
+                                    <img src={`/${item.image}`} alt="prod carrito" />
+                                </div>
+                                <div className='cart-prod__info'>
+                                    <p>{item.title}</p>
+                                    <span>$ {item.price}</span>
+                                    <span>Cantidad: {item.cantidad}</span>
+                                </div>
+                                <div className='cart-prod__action'>
+                                    <button>
+                                        <DeleteIcon 
+                                            style={{color: '#14323d'}}
+                                            onClick={() => removeProductFromCart(item.id)} />
+                                    </button>
+                                </div>
                             </div>
-                            <div className='cart-prod__info'>
-                                <p>{item.title}</p>
-                                <span>$ {item.price}</span>
-                                <span>Cantidad: {item.cantidad}</span>
-                            </div>
-                            <div className='cart-prod__action'>
-                                <button>
-                                    <DeleteIcon style={{color: '#14323d'}}/>
-                                </button>
-                            </div>
-                        </div>
-                        )
-                    })}
-                    
+                            ) 
+                        })}
+                            <Button
+                                variant='outlined'
+                                onClick={() => clearCart()}
+                                className='clear-cart'
+                                style={{margin: '10px'}}
+                                >Vaciar carrito</Button>            
                 </div>
+                
             </Menu>
         </div>
     )
