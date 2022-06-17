@@ -15,6 +15,7 @@ const ProductList = () => {
         .then( (productos) => {
             category ?  filterFirebase() : setProducts(productos)
         })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [category])
 
     const getProducts = async () => {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"
-import productos from '../../utils/productsMock'
-import { useParams, useNavigate } from 'react-router-dom'
+// import productos from '../../utils/productsMock'
+import { useParams } from 'react-router-dom'
 import { doc, getDoc } from "firebase/firestore"
 import db from "../../utils/firebaseConfig"
 
@@ -9,7 +9,7 @@ import db from "../../utils/firebaseConfig"
 const ItemDetailContainer = () =>{
 
     const { id } = useParams()
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const [product, setProduct] = useState({})
 
     useEffect(() =>{
