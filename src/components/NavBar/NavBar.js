@@ -3,7 +3,6 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import PrimarySearchAppBar from '../NavBar/Search'
 import { Link } from 'react-router-dom';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -79,13 +78,11 @@ const NavBar = () => {
                         </Menu>
                             </li>
                             <li>
-                                <Button disableRipple style={{ backgroundColor: 'transparent' }} variant='text' className='navbar__btn'>Preguntas Frecuentes</Button>
-                            </li>
-                            <li>
+                                <Link to={'/contact'} style={{ textDecoration: 'none', color: 'black' }}>
                                 <Button disableRipple style={{ backgroundColor: 'transparent' }} variant='text' className='navbar__btn'>Contacto</Button>
+                                </Link>
                             </li>
                         </ul>
-                        <PrimarySearchAppBar className='search'/>
                         <CartWidget/>
                     </Toolbar>
                 </AppBar>

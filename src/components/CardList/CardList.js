@@ -1,3 +1,4 @@
+import './CardList.css'
 import CardItem from '../Card/Card'
 import { Grid, Container } from '@mui/material'
 
@@ -6,7 +7,7 @@ import { Grid, Container } from '@mui/material'
 const CardList = ({title, products}) =>{
 
     return(
-        <div>
+        <div className='card'>
             <h2>{title}</h2>
             <Container>
                 <Grid container spacing={2}>

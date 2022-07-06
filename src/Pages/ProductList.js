@@ -43,7 +43,7 @@ const ProductList = () => {
 
     return(
         <div>
-            <CardList title={'LISTADO DE PRODUCTOS'} products={products}/>
+            <CardList title={category} products={products}/>
         </div>
     )
 }

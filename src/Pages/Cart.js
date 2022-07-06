@@ -1,3 +1,4 @@
+import './Cart.css'
 import { useContext, useState } from "react"
 import { Container, Button } from "@mui/material"
 import { Delete } from "@mui/icons-material"
